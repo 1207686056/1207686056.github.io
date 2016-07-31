@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <span class="day"></span>:
+  <span class="hour"></span>:
+  <span class="minutes"></span>:
+  <span class="seconds"></span>
+  <input sty="button" value="开始抢购" class="btn">
+  <script src="script/jquery.js"></script>
+  <script >
+  function fun(){
+  var old="2016-8-34 12:00:00"
+  var  t=new Date(old)
+  var time=t.getTime()
+  var now=new Date()
+  var times=now.getTime()
+  var result=time-times
+  var day=Math.floor(result/(24*60*60*1000))
+  $(".day").text(day);
+  var x=result%(24*60*60*1000)
+  var hour=Math.floor(result/(60*60*1000))
+  $(".hour").text(hour)
+  var y=result%(60*60*1000)
+  var minutes=Math.floor(result/(60*1000))
+  $(".minutes").text(minutes)
+  var z=result%(60*1000)
+    var seconds=Math.floor(z/1000)
+    $(".seconds").text(seconds)
+    if(day<=0&&hour<=0&&minutes<=0&&seconds<=0){
+        clearInterval(t)
+       $(".btn").css("background-color","green")
+      }
+  }
+  fun()
+     var t=setInterval(fun,1000);
+  </script>
+</body>
+</html>

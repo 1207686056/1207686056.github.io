@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			margin:0px;
+			padding:0px;
+		}
+		li{
+			list-style: none;
+			width: 20px;
+			height: 20px;
+			border:1px solid #aaa;
+			float: left;
+			text-align: center;
+			line-height: 20px;
+			background-color: red;
+		}
+		
+		.active{
+			background-color: green;
+		}	
+	
+	</style>
+</head>
+<body>
+	<img src="images/1.jpg" alt="" class="pic">
+	<ul>
+		<li >1</li>
+		<li >2</li>
+		<li >3</li>
+		<li >4</li>
+	</ul>
+	<script>
+	var oLi = document.querySelectorAll("li");
+	var p = document.querySelector(".pic");
+	var arr=["images/1.jpg","images/2.jpg","images/3.jpg","images/4.jpg"]
+		for(var i = 0;i<oLi.length;i++){
+			oLi[i].onclick = function(){
+				var ind = index(this);
+				p.src=arr[ind]
+				oLi[i]=addClass(this,"active")
+				var t=siblings(this)
+				 removeClass(t,"active")
+                
+			}
+		}
+
+		function index(elem){
+			var siblings = elem.parentNode.children;
+			for(var i = 0;i<siblings.length;i++){
+				if(siblings[i] == elem){
+					return i;
+				}
+			}
+		}
+		function addClass(ele,str){
+         if( ele.className==""){
+         	  ele.className=str
+         }
+     }
+     function siblings(elem){
+			var sibs = elem.parentNode.children;
+			var newArr = [];
+			for(var i = 0;i<sibs.length;i++){
+				if(sibs[i] != elem){
+					newArr.push(sibs[i])
+				}
+			}
+			return newArr;
+		}
+			function removeClass(elem,str){
+			// var cName = elem.className;
+			// var arrClassName = cName.split(" ");
+			// var newArr = [];
+			for(var i = 0;i< elem.length;i++){
+				if(elem[i].className==str){
+					elem[i].className="";
+				}
+			}
+			}
+	</script>
+</body>
+</html>

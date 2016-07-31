@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	
+	</style>
+</head>
+<body>
+      <form action="">
+      	用户邮箱：<input type="text" class="txt">
+      	<span class="q">请输入邮箱</span>
+      	<span class="a"></span>
+      </form>
+	<script src="script/jquery.js"></script>
+	<script >
+	var re=/^([0-9]{4})\-([0-9]{2})\-([0-9]{2})/;
+	$(".txt").blur(function(){
+    var phone=$(this).val()
+	var result=re.test(phone);
+	var span=checkinput(result);
+	$(".a").text(phone)
+	$(".q").html(span)
+        })
+	function checkinput(bool){
+		var rightSpan="<span>正确</span><p>您输入的正确时间为：</p>"
+		var wrongSpan="<span>错误</span>"
+		if(bool) {
+           return rightSpan;
+		}else{
+			return wrongSpan;
+		}
+	}
+	</script>
+</body>
+</html>

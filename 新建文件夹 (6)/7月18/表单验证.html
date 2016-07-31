@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		.green{
+			color:green;
+		}
+		.red{
+			color:red;
+		}
+
+	</style>
+</head>
+<body>
+
+	<form action="">
+		<label for="">电话</label>
+		<input type="text" id="num">
+		<span id="info"></span>
+	</form>
+	<script src="script/jquery.js"></script>
+	<script>
+		var re = /^[0-9]{11}$/;
+		$("#num").blur(function(){
+			var value = $(this).val();
+			var result = re.test(value);
+			if(result){
+				$("#info").text("成功").removeClass("red").addClass("green");
+			}else{
+				$("#info").text("失败").removeClass("green").addClass("red");;
+			}
+		})
+	</script>
+</body>
+</html>

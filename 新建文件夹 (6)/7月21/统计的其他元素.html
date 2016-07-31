@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<ul>
+		<li>1</li>
+		<li class="z">2</li>
+		<li >3</li>
+		<li>4</li>
+		<li>5</li>
+	</ul>
+	<script>
+	var l=document.querySelector(".z")
+	
+	function sibling (a) {
+	var x=a.parentNode.children
+	var narr=[]
+    for(var i=0;i<x.length;i++){
+	 if(x[i]!=a){
+       	     narr.push(x[i])
+  
+       		}
+	}
+	return narr;
+	}
+	 var arr=sibling(l)
+	console.log(arr)
+	</script>
+</body>
+</html>

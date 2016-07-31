@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<form action="">
+	<input type="text" class="txt">
+	<input type="text" class="txt1">
+	<input type="text" class="txt2">
+	<input type="text" class="txt3">
+	<input type="text" class="txt4">
+
+	<input type="button" value="年" class="btn">
+	<input type="button" value="月" class="btn">
+	<input type="button" value="日" class="btn">
+	<input type="button" value="时" class="btn">
+	<input type="button" value="分" class="btn">
+    </form>
+	<script src="script/jquery.js"></script>
+	<script >
+    $(".btn").click(function(){
+	var today=new Date();
+	var year=today.getFullYear();
+    var month=today.getMonth();
+    var date = today.getDate();
+    var  hours=today.getHours();
+    var minutes=today.getMinutes();
+    var seconds=today.getSeconds();
+    $(".txt").val(year);
+    $(".txt1").val(month);
+    $(".txt2").val(date);
+    $(".txt3").val(hours);
+    $(".txt4").val(minutes);
+    })
+	</script>
+
+</body>
+</html>

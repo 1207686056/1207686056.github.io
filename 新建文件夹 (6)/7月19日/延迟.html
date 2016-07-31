@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<span class="a">爆炸</span>
+	<input type="button"  value="解除爆炸" class="btn">
+	<script src="script/jquery.js"></script>
+	<script >
+	var n=0
+	function fun(){
+		$(".a").text("鹏鹏")
+	}
+	var t=setTimeout(fun,2000);
+    $(".btn").click(function(){
+    	clearTimeout(t)
+    })
+
+	</script>
+	
+</body>
+</html>

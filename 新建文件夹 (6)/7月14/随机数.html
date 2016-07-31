@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<form action="">
+	<input type="text" class="txt">
+	<input type="button" value="请选择" class="btn">	
+	</form>
+	<script src="script/jquery.js"></script>
+	<script >
+	
+     $(".btn").click(function(){
+     	var text=$(".txt").val()
+     	var ruselt=Math.floor(Math.random()*6+1)
+     	if(text>ruselt){
+     		alert("超过了")
+     	}
+     	if(text==ruselt){
+     		alert("答对了")
+     	}
+     	if(text<ruselt){
+     		alert("少于")
+     	}
+     })
+	</script>
+</body>
+</html>

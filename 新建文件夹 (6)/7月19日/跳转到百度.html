@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<span class="q">5<span>秒后自动跳转到百度</span></span>
+	<script src="script/jquery.js"></script>
+    <script >
+        var i=5;
+        function forward()
+       {
+       	$(".q").text(i);
+         i--;
+         if(i==0)
+         {
+           location.href="http://www.baidu.com";
+       }
+   }
+      setInterval(forward,1000);
+    </script>
+</body>
+</html>

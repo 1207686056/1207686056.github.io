@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script >
+	var cat={
+      name:"haha ",
+      age:12,
+      sayname: function(){
+      	alert("我是"+this.name)
+      	return this;
+      	},
+      	eat:function(food){
+      		alert("我喜欢"+food)
+      	return this;
+      },
+      count:function(num2,num1,sign){
+
+      	 if (sign=="+") 
+      	    {
+   	 	        var sum=Number(num2)+Number(num1)
+   	        };
+    	 if (sign=="-") 
+    	    {
+    	 	var sum=Number(num2)-Number(num1)
+   	        };
+   	 if (sign=="*")
+   	        {
+   	 	var sum=Number(num2)*Number(num1)
+  	        };
+  	 if (sign=="/") 
+  	        {
+    	 	var sum=Number(num2)/Number(num1)
+    	    };
+    	    alert(sum)
+      }
+ } 
+   cat.name="gag"
+   cat.sayname()
+   cat.eat("鱼")
+    cat.count(5,6,"-")
+     cat.sayname().eat()
+
+	</script>
+</body>
+</html>

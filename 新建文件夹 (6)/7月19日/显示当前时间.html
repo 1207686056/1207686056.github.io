@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<span id="year"></span>
+	<span id="month"></span>
+	<span id="date"></span>
+	<span id="hours"></span>:
+	<span id="minutes"></span>:
+	<span id="seconds"></span>
+	<script src="script/jquery.js"></script>
+	<script>
+        function fun(){
+		var today = new Date();
+		var hours = today.getHours();
+		var minutes = today.getMinutes();
+		var seconds = today.getSeconds();
+		var time = today.getTime();
+      
+
+		$("#hours").text(hours);
+		$("#minutes").text(minutes);
+		$("#seconds").text(seconds);
+         function forward()
+       {
+       	$("#seconds").text(seconds);
+       	seconds++;
+       }
+       }
+        setInterval(fun,1000);
+	</script>
+</body>
+</html>

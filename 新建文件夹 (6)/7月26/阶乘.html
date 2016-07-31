@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	// function fun(s){
+	// 	var x=1
+ //      for(var i=1;i<=s;i++){
+ //      	x*=i
+ //      }
+ //      console.log(x)
+ //     }
+ //      fun(4)
+      function fun(s){
+        if(s==1){
+        	return s
+        }else{
+        	var i=s*fun(s-1)
+        	return i
+        }
+        console.log(s)
+      }
+      fun(3)
+</script>	
+</body>
+</html>

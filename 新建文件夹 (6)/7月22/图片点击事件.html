@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	.big{
+		width: 200px;
+		height: 200px;
+		background-color: red;
+	}
+	.center{
+		width: 100px;
+		height: 100px;
+		background-color: green;
+	}
+	.small{
+		width: 60px;
+		height: 60px;
+		background-color: black;
+	}
+	</style>
+</head>
+<body>
+	<div class="big">
+		<div class="center">
+			<div class="small"></div>
+		</div>
+	</div>
+	<script>
+	var x=document.querySelector(".big")
+	var y=document.querySelector(".center")
+	var z=document.querySelector(".small")
+	x.addEventListener("click",function(){
+        alert("sue")
+	 })
+	y.addEventListener("click",function(){
+        alert("bala")
+	 })
+	z.addEventListener("click",function(event){
+        alert("du")
+       event.stopPropagation()
+	 })
+	</script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+    <style type="text/css">
+    div.box{width:300px;padding:20px;margin:20px;border:4px dashed #ccc;}
+div.box>span{color:#999;font-style:italic;}
+div.content{width:250px;margin:10px 0;padding:20px;border:2px solid #ff6666;}
+     .btn{
+     	width: 70px;
+     	height: 40px;
+     	background-color: red;
+     	margin-top: 13px;
+     }
+    </style>
+</head>
+<body>
+	<div class="box">
+		<span>距离抢购还剩：</span>
+        <span id="date"></span>:
+	    <span id="hours"></span>:
+	    <span id="minutes"></span>:
+	    <span id="seconds"></span>
+        <form action="">
+		<input sty="button" value="开始抢购" class="btn">
+	</form>
+	<script src="script/jquery.js"></script>
+	<script >
+	function fun(){
+	var strTime="2016-7-19 13:55:00"
+	var timeTarget=new Date(strTime)
+	var target=timeTarget.getTime();
+	var timeNow=new Date();
+	var time= timeNow.getTime();
+	var result=target-time;
+	var day=Math.floor(result/(24*60*60*1000))
+	$("#date").text(day);
+    alert(day)
+    var x=result%(24*60*60*1000)
+    var hours=Math.floor(x/(60*60*1000))
+    $("#hours").text(hours)
+    var y=result%(60*60*1000)
+    var minutes=Math.floor(y/(60*1000))
+    $("#minutes").text(minutes)
+     var z=result%(60*1000)
+    var seconds=Math.floor(z/1000)
+    $("#seconds").text(seconds)
+    	 if(day<=0&&hours<=0&&minutes<=0&&seconds<=0){
+    	 	clearInterval(t)
+       $(".btn").css("background-color","green")
+      }
+
+     }
+     fun()
+     var t=setInterval(fun,1000);
+     
+	</script>
+	</div>
+</body>
+</html>

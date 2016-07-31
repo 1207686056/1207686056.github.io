@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div class="box1 box2 box3"></div>
+	<script>
+		var box=document.querySelector("div")
+       function removeClass(ele,str){
+       	var c=ele.className
+       	var arr=c.split(" ")
+       	var narr=[]
+       	for(var i=0;i<arr.length;i++){
+       		if(arr[i]!=str){
+       	      
+       	     narr.push(arr[i])
+  
+       		}
+       	}
+       	var str=narr.join(" ")
+       	ele.className=str
+       }
+         removeClass(box,"box2")
+	</script>
+	
+</body>
+</html>

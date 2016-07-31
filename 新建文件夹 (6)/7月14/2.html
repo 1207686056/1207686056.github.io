@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<form action="">
+		<input type="text" value="" class="text1">
+		<input type="text" value="" class="text3">
+		 <input type="text" value="" class="text2">=
+		 <input type="text" value="" class="num">
+		 <input type="button" value="连接" class="btn">
+	</form>
+	<script src="script/jquery.js"></script>
+	<script >
+	$(".btn").click(function(){
+		var text1=$(".text1").val();
+		var text2=$(".text2").val();
+		var text3=$(".text3").val();
+		switch(text3){
+			case "+":var num=Number(text1)+Number(text2);break;
+			case "-":var num=Number(text1)-Number(text2);break;
+			case "*":var num=Number(text1)*Number(text2);break;
+			case "/":var num=Number(text1)/Number(text2);break;
+		}
+		// if (text3 == "+") 
+		// 	{var num=Number(text1)+Number(text2);};
+		// if (text3 == "-") 
+		// 	{var num=Number(text1)-Number(text2);};
+		// if (text3 == "*") 
+		// 	{var num=Number(text1)*Number(text2);};
+		// if (text3 ==  "/") 
+		// 	{var num=Number(text1)/Number(text2);};
+
+		$(".num").val(num)
+	})
+	</script>
+</body>
+</html>
